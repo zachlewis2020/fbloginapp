@@ -9,15 +9,15 @@ interface State {
 }
 
 class FBLogin extends React.Component {
- 
+
   state = { isLoggedIn: false }
 
   responseFacebook = (response: any) => {
     console.log("Status:(" + response + ")")
     if (response.status === 'connected') {
-      this.setState({isLoggedIn: true})
+      this.setState({ isLoggedIn: true })
     } else {
-      this.setState({isLoggedIn: false})
+      this.setState({ isLoggedIn: false })
     }
   }
 
@@ -27,13 +27,13 @@ class FBLogin extends React.Component {
       <div className="App">
         <h1>MGM Side Hustle - Facebook Login</h1>
         <hr />
-        {this.state.isLoggedIn ? <SideHustle/> :
-        <FacebookLogin
-          appId="253330662584482"
-          autoLoad={true}
-          fields="name,email"
-          callback={this.responseFacebook}
-        />}
+        {this.state.isLoggedIn ? <SideHustle /> :
+          <FacebookLogin
+            appId="253330662584482"
+            autoLoad={true}
+            fields="name,email"
+            callback={this.responseFacebook}
+          />}
         <hr />
       </div>
     );
