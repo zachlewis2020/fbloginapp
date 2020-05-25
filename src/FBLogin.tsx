@@ -31,8 +31,7 @@ class FBLogin extends React.Component {
         <FacebookLogin
           appId="253330662584482"
           autoLoad={true}
-          fields="email"
-          scope="public_profile"
+          fields="name,email"
           callback={this.responseFacebook}
         />}
         <hr />
