@@ -13,7 +13,7 @@ class FBLogin extends React.Component {
   state = { isLoggedIn: false }
 
   responseFacebook = (response: any) => {
-    console.log(response.status)
+    console.log("Status:(" + response + ")")
     if (response.status === 'connected') {
       this.setState({isLoggedIn: true})
     } else {
@@ -31,8 +31,8 @@ class FBLogin extends React.Component {
         <FacebookLogin
           appId="253330662584482"
           autoLoad={true}
-          fields="name,email,picture"
-          scope="public_profile,user_friends,user_actions.books"
+          fields="email"
+          scope="public_profile"
           callback={this.responseFacebook}
         />}
         <hr />

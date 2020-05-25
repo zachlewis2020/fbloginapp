@@ -7,8 +7,6 @@ export function Privacy() {
   return (<div>ZALME LLC (MGM Side Hustle - 2020) - <a href="privacy.html">Privacy Policy</a></div>);
 }
 
-
-
 class App extends React.Component {
 
   render() {
