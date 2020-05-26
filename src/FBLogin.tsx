@@ -10,14 +10,17 @@ interface State {
 
 class FBLogin extends React.Component {
 
-  state = { isLoggedIn: false }
+  state = { isLoggedIn: false,
+            name: '',
+            email: '' }
 
   responseFacebook = (response: any) => {
-    console.log("Status:(" + response + ")")
-    if (response.status === 'connected') {
-      this.setState({ isLoggedIn: true })
+    if (response.name) {
+      this.setState({ isLoggedIn: true, name: response.name, email: response.email })
     } else {
       this.setState({ isLoggedIn: false })
+      alert("You must login using Facebook to use the App !")
+      console.log("You must login using Facebook to use the App !")
     }
   }
 
@@ -27,7 +30,7 @@ class FBLogin extends React.Component {
       <div className="App">
         <h1>MGM Side Hustle - Facebook Login</h1>
         <hr />
-        {this.state.isLoggedIn ? <SideHustle /> :
+        {this.state.isLoggedIn ? <SideHustle name={this.state.name} email={this.state.email} isLoggedIn /> :
           <FacebookLogin
             appId="253330662584482"
             autoLoad={true}

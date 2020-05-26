@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
 
-class SideHustle extends React.Component {
+interface props { isLoggedIn: boolean;
+  name: String;
+  email: String 
+}
 
-  constructor(props: { data: string }) {
+class SideHustle extends React.Component<props> {
+
+  constructor(props: Readonly<props>) {
     super(props);
-    this.state = { value: '' };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event: { preventDefault: () => void; }) {
@@ -19,7 +22,7 @@ class SideHustle extends React.Component {
 
     return (
       <div className="App">
-      Ready for Side Hustle
+      Ready for Side Hustle: {this.props.name}
         <form onSubmit={this.handleSubmit}>
           <label>
             2 Gallons - Purfied Water
