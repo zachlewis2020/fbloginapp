@@ -28,7 +28,7 @@ class FBLogin extends React.Component {
 
     return (
       <div className="App">
-        <h1>MGM Side Hustle - Facebook Login</h1>
+        <h1>MGM Side Hustle -  {this.state.isLoggedIn ? "Ready to Earn" : "Login"} </h1>
         <hr />
         {this.state.isLoggedIn ? <SideHustle name={this.state.name} email={this.state.email} isLoggedIn /> :
           <FacebookLogin

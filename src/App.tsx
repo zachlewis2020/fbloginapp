@@ -13,7 +13,6 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>MGM Side Hustle</h1>
         <FBLogin/>
         <Privacy />
       </div>
